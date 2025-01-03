@@ -3,17 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ICS/OT Cybersecurity Engineer specializing in industrial control systems security, SCADA protection, and critical infrastructure defense">
+    <meta description="ICS/OT Cybersecurity Engineer specializing in industrial control systems security, SCADA protection, and critical infrastructure defense">
     <meta name="keywords" content="ICS security, OT cybersecurity, SCADA security, industrial cybersecurity, critical infrastructure protection">
     <title>Muhammad Hammad | ICS/OT Cybersecurity Engineer</title>
     
     <!-- External Libraries -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
+        integrity="sha512-..." 
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer" 
+    />
+    <script 
+        src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" 
+        integrity="sha512-..." 
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer">
+    </script>
+    <script 
+        src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js" 
+        defer>
+    </script>
+    <script 
+        src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" 
+        defer>
+    </script>
+
     <style>
         /* Advanced Core Variables */
         :root {
@@ -24,9 +41,9 @@
             
             /* Accent Colors */
             --accent-cyber: #00FF9C;    /* Cyber Green */
-            --accent-electric: #41D7FF;  /* Electric Blue */
+            --accent-electric: #41D7FF; /* Electric Blue */
             --accent-alert: #FF4B4B;    /* Alert Red */
-            --accent-warning: #FFB86C;   /* Warning Orange */
+            --accent-warning: #FFB86C;  /* Warning Orange */
             
             /* UI Colors */
             --ui-glow: rgba(0, 255, 156, 0.5);
@@ -34,8 +51,8 @@
             
             /* Text Colors */
             --text-primary: #E6F1FF;    /* Bright Text */
-            --text-secondary: #8892B0;   /* Muted Text */
-            --text-highlight: #00FF9C;   /* Highlight Text */
+            --text-secondary: #8892B0;  /* Muted Text */
+            --text-highlight: #00FF9C;  /* Highlight Text */
             
             /* Gradients */
             --gradient-cyber: linear-gradient(135deg, var(--accent-cyber), var(--accent-electric));
@@ -60,7 +77,7 @@
         }
 
         /* Enhanced Reset & Base Styles */
-        * {
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -156,6 +173,11 @@
             color: var(--accent-cyber);
             font-size: 0.9rem;
             opacity: 0.8;
+            animation: typing 4s steps(40) infinite, blink 0.75s step-end infinite;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid var(--accent-cyber);
+            width: 100%;
         }
 
         /* Advanced Cyber Grid Background */
@@ -201,6 +223,9 @@
             pointer-events: none;
             z-index: -2;
             opacity: 0.1;
+            background-image: url('path/to/neural-network-image.png'); /* Replace with actual image URL */
+            background-size: cover;
+            background-position: center;
         }
 
         /* Advanced Animations */
@@ -261,7 +286,20 @@
             background: rgba(0, 255, 156, 0.1);
             pointer-events: none;
             transform-origin: center;
+            animation: moveParticle 10s linear infinite;
         }
+
+        @keyframes moveParticle {
+            from {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(-100vh) scale(0.5);
+                opacity: 0;
+            }
+        }
+
         /* Navigation Styles */
         .nav {
             position: fixed;
@@ -270,6 +308,7 @@
             z-index: 1000;
             transition: var(--transition-smooth);
             backdrop-filter: blur(10px);
+            background: rgba(10, 25, 41, 0.8);
         }
 
         .nav.scrolled {
@@ -446,7 +485,7 @@
             color: var(--text-primary);
             font-size: 1.5rem;
             cursor: pointer;
-            z-index: 1000;
+            z-index: 1001;
         }
 
         @media (max-width: 768px) {
@@ -470,7 +509,18 @@
             .nav-links.active {
                 transform: translateX(0);
             }
+
+            .nav-link {
+                font-size: 1.2rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .security-status {
+                margin-left: 0;
+                margin-top: 2rem;
+            }
         }
+
         /* Hero Section Styles */
         .hero {
             min-height: 100vh;
@@ -490,1353 +540,379 @@
         }
 
         .hero-title {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        .hero-title .glitch-wrapper {
-            position: relative;
-            display: inline-block;
-        }
-
-        .hero-title .glitch {
-            position: relative;
+            font-size: clamp(2rem, 5vw, 4rem);
+            background: -webkit-linear-gradient(var(--accent-cyber), var(--accent-electric));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             animation: glitch 1s infinite;
-        }
-
-        .hero-title .glitch::before,
-        .hero-title .glitch::after {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--primary-dark);
-        }
-
-        .hero-title .glitch::before {
-            left: 2px;
-            text-shadow: -2px 0 var(--accent-electric);
-            clip: rect(24px, 550px, 90px, 0);
-            animation: glitch-anim 3s infinite linear alternate-reverse;
-        }
-
-        .hero-title .glitch::after {
-            left: -2px;
-            text-shadow: -2px 0 var(--accent-cyber);
-            clip: rect(85px, 550px, 140px, 0);
-            animation: glitch-anim 2s infinite linear alternate-reverse;
-        }
-
-        /* Terminal Window in Hero */
-        .terminal-window {
-            background: rgba(10, 25, 41, 0.8);
-            border-radius: var(--radius-md);
-            padding: 1.5rem;
-            margin: 2rem auto;
-            max-width: 600px;
-            box-shadow: 0 0 30px var(--ui-shadow);
-            border: 1px solid rgba(0, 255, 156, 0.2);
-            backdrop-filter: blur(10px);
-        }
-
-        .terminal-header {
-            display: flex;
-            align-items: center;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--accent-cyber);
-        }
-
-        .terminal-buttons {
-            display: flex;
-            gap: 8px;
-        }
-
-        .terminal-buttons span {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--accent-alert);
-        }
-
-        .terminal-buttons span:nth-child(2) {
-            background: var(--accent-warning);
-        }
-
-        .terminal-buttons span:nth-child(3) {
-            background: var(--accent-cyber);
-        }
-
-        .terminal-title {
-            margin-left: 1rem;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            font-family: 'Fira Code', monospace;
-        }
-
-        .terminal-body {
-            padding: 1rem 0;
-            font-family: 'Fira Code', monospace;
-        }
-
-        .command-line {
-            display: flex;
-            gap: 0.5rem;
-            margin-bottom: 0.5rem;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.5s ease forwards;
-        }
-
-        .command-prompt {
-            color: var(--accent-cyber);
-            user-select: none;
-        }
-
-        .command-text {
-            position: relative;
-            color: var(--text-primary);
-        }
-
-        .command-cursor {
-            position: absolute;
-            right: -10px;
-            top: 0;
-            width: 8px;
-            height: 100%;
-            background: var(--accent-cyber);
-            animation: blink 1s infinite;
-        }
-
-        /* Expertise Section */
-        .expertise {
-            padding: var(--spacing-xl) 0;
-            background: var(--primary);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: var(--spacing-xl);
-            position: relative;
-        }
-
-        .section-title {
-            font-size: clamp(2rem, 4vw, 3rem);
             margin-bottom: 1rem;
-            position: relative;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-button {
+            padding: 0.75rem 1.5rem;
+            background: var(--accent-cyber);
+            color: var(--primary-dark);
+            border: none;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            font-size: 1rem;
+            transition: var(--transition-smooth);
+            text-decoration: none;
             display: inline-block;
         }
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60%;
-            height: 2px;
-            background: var(--gradient-cyber);
+        .hero-button:hover {
+            background: var(--accent-electric);
+            transform: translateY(-2px);
         }
 
-        .expertise-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
+        /* About Section */
+        .about {
+            padding: var(--spacing-lg) var(--spacing-md);
+            background: var(--primary);
+            text-align: center;
         }
 
-        .expertise-card {
-            background: rgba(10, 25, 41, 0.8);
-            border-radius: var(--radius-md);
-            padding: 2rem;
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 255, 156, 0.1);
-        }
-
-        .expertise-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-                45deg,
-                transparent,
-                rgba(0, 255, 156, 0.1),
-                transparent
-            );
-            transform: translateX(-100%);
-            transition: transform 0.6s ease;
-        }
-
-        .expertise-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .expertise-card:hover::before {
-            transform: translateX(100%);
-        }
-
-        .card-icon {
-            width: 60px;
-            height: 60px;
-            margin-bottom: 1.5rem;
-            position: relative;
-        }
-
-        .icon-container {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(0, 255, 156, 0.1);
-            border-radius: var(--radius-md);
+        .about-title {
+            font-size: 2rem;
             color: var(--accent-cyber);
-            font-size: 1.5rem;
-            transition: transform 0.3s ease;
-        }
-
-        .expertise-card:hover .icon-container {
-            transform: rotateY(180deg);
-        }
-
-        .icon-pulse {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100%;
-            height: 100%;
-            border: 2px solid var(--accent-cyber);
-            border-radius: var(--radius-md);
-            animation: iconPulse 2s infinite;
-        }
-
-        @keyframes iconPulse {
-            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
-            100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
-        }
-
-        .card-title {
-            font-size: 1.25rem;
-            color: var(--text-primary);
             margin-bottom: 1rem;
         }
 
-        .card-description {
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
             color: var(--text-secondary);
-            font-size: 0.9rem;
-            line-height: 1.6;
+            font-size: 1rem;
+            line-height: 1.8;
         }
 
-        /* Feature List */
-        .feature-list {
-            list-style: none;
-            margin-top: 1.5rem;
-        }
-
-        .feature-list li {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        .feature-list li::before {
-            content: '→';
-            color: var(--accent-cyber);
-        }
-
-        /* Security Meter */
-        .security-meter {
-            height: 4px;
-            background: rgba(0, 255, 156, 0.1);
-            border-radius: var(--radius-full);
-            margin-top: 1.5rem;
-            overflow: hidden;
-        }
-
-        .meter-progress {
-            height: 100%;
-            background: var(--gradient-cyber);
-            transform-origin: left;
-            transform: scaleX(0);
-            transition: transform 1s ease;
-        }
-
-        .expertise-card:hover .meter-progress {
-            transform: scaleX(1);
-        }
-        /* Projects Section */
-        .projects {
-            padding: var(--spacing-xl) 0;
+        /* Services Section */
+        .services {
+            padding: var(--spacing-lg) var(--spacing-md);
             background: var(--primary-dark);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            padding: 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .project-card {
-            position: relative;
-            height: 400px;
-            background: var(--primary-light);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            transform-style: preserve-3d;
-            perspective: 2000px;
-        }
-
-        .project-content {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            transform-style: preserve-3d;
-            transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-        }
-
-        .project-front,
-        .project-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            padding: 2rem;
-        }
-
-        .project-back {
-            transform: rotateY(180deg);
-            background: var(--gradient-cyber);
-        }
-
-        .project-card:hover .project-content {
-            transform: rotateY(180deg);
-        }
-
-        .project-icon {
-            position: relative;
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 2rem;
-        }
-
-        .project-icon i {
-            font-size: 2.5rem;
-            color: var(--accent-cyber);
-            position: relative;
-            z-index: 2;
-        }
-
-        .icon-rings {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .icon-rings span {
-            position: absolute;
-            border: 2px solid var(--accent-cyber);
-            border-radius: 50%;
-            animation: iconRings 2s infinite;
-        }
-
-        .icon-rings span:nth-child(1) {
-            width: 40px;
-            height: 40px;
-            animation-delay: 0s;
-        }
-
-        .icon-rings span:nth-child(2) {
-            width: 60px;
-            height: 60px;
-            animation-delay: 0.4s;
-        }
-
-        .icon-rings span:nth-child(3) {
-            width: 80px;
-            height: 80px;
-            animation-delay: 0.8s;
-        }
-
-        @keyframes iconRings {
-            0% {
-                transform: translate(-50%, -50%) scale(1);
-                opacity: 0.5;
-            }
-            100% {
-                transform: translate(-50%, -50%) scale(1.5);
-                opacity: 0;
-            }
-        }
-
-        .project-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .stat {
             text-align: center;
-            padding: 1rem;
-            background: rgba(0, 255, 156, 0.1);
-            border-radius: var(--radius-md);
         }
 
-        .stat-value {
-            display: block;
-            font-size: 1.5rem;
+        .services-title {
+            font-size: 2rem;
             color: var(--accent-cyber);
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
         }
 
-        .stat-label {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        .security-layers {
+        .services-list {
             display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .layer {
-            padding: 1rem;
-            background: rgba(10, 25, 41, 0.8);
-            border-radius: var(--radius-md);
-            color: var(--text-primary);
-            transform: translateX(-100%);
-            opacity: 0;
-            animation: slideInLayer 0.5s ease forwards;
-        }
-
-        .layer:nth-child(1) { animation-delay: 0.1s; }
-        .layer:nth-child(2) { animation-delay: 0.2s; }
-        .layer:nth-child(3) { animation-delay: 0.3s; }
-        .layer:nth-child(4) { animation-delay: 0.4s; }
-
-        @keyframes slideInLayer {
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-
-        /* Skills Matrix */
-        .skills-matrix {
-            padding: var(--spacing-xl) 0;
-            background: var(--primary);
-            position: relative;
-        }
-
-        .matrix-container {
-            max-width: 1400px;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+            justify-content: center;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
         }
 
-        .matrix-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 3rem;
+        .service-item {
+            background: var(--primary-light);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            flex: 1 1 300px;
+            box-shadow: 0 4px 6px var(--ui-shadow);
+            transition: transform 0.3s ease;
         }
 
-        .matrix-legend {
-            display: flex;
-            gap: 2rem;
+        .service-item:hover {
+            transform: translateY(-5px);
         }
 
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--text-secondary);
-        }
-
-        .dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
-
-        .dot.expert { background: var(--accent-cyber); }
-        .dot.advanced { background: var(--accent-electric); }
-        .dot.intermediate { background: var(--accent-warning); }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-category {
-            background: rgba(10, 25, 41, 0.8);
-            border-radius: var(--radius-lg);
-            padding: 2rem;
-            backdrop-filter: blur(10px);
-        }
-
-        .skill-category h3 {
-            color: var(--accent-cyber);
-            margin-bottom: 1.5rem;
-            font-size: 1.25rem;
-        }
-
-        .skill-items {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .skill-item {
-            position: relative;
-        }
-
-        .skill-name {
-            display: block;
+        .service-icon {
+            font-size: 2rem;
+            color: var(--accent-electric);
             margin-bottom: 0.5rem;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .service-description {
             color: var(--text-secondary);
-        }
-
-        .skill-bar {
-            height: 4px;
-            background: rgba(0, 255, 156, 0.1);
-            border-radius: var(--radius-full);
-            overflow: hidden;
-            position: relative;
-        }
-
-        .skill-progress {
-            height: 100%;
-            background: var(--gradient-cyber);
-            transform-origin: left;
-            transform: scaleX(0);
-            transition: transform 1s ease;
-        }
-
-        .skill-particles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-
-        .skill-particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: var(--accent-cyber);
-            border-radius: 50%;
+            font-size: 1rem;
+            line-height: 1.6;
         }
 
         /* Contact Section */
         .contact {
-            padding: var(--spacing-xl) 0;
-            background: var(--primary-dark);
-            position: relative;
-            overflow: hidden;
+            padding: var(--spacing-lg) var(--spacing-md);
+            background: var(--primary);
+            text-align: center;
         }
 
-        .secure-contact-container {
-            max-width: 800px;
+        .contact-title {
+            font-size: 2rem;
+            color: var(--accent-cyber);
+            margin-bottom: 1rem;
+        }
+
+        .contact-form {
+            max-width: 600px;
             margin: 0 auto;
-            padding: 2rem;
-        }
-
-        .encryption-visualization {
-            height: 100px;
-            position: relative;
-            margin-bottom: 2rem;
-            overflow: hidden;
-        }
-
-        .encryption-process {
-            position: relative;
-            height: 100%;
-        }
-
-        .data-packet {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: var(--accent-cyber);
-            border-radius: 50%;
-            opacity: 0.8;
-        }
-
-        .encryption-layer {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 2px;
-            height: 100%;
-            background: var(--gradient-cyber);
-        }
-        /* Secure Contact Form */
-        .secure-form {
-            background: rgba(10, 25, 41, 0.8);
-            border-radius: var(--radius-lg);
-            padding: 2rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 255, 156, 0.1);
-        }
-
-        .form-header {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 2rem;
+            flex-direction: column;
+            gap: 1rem;
         }
 
-        .security-status {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--accent-cyber);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .input-container {
-            position: relative;
-        }
-
-        .form-input {
-            width: 100%;
-            padding: 1rem;
-            background: rgba(10, 25, 41, 0.5);
-            border: 1px solid rgba(0, 255, 156, 0.2);
-            border-radius: var(--radius-md);
-            color: var(--text-primary);
-            font-family: 'Fira Code', monospace;
-            transition: var(--transition-smooth);
-        }
-
-        .form-input:focus {
-            outline: none;
-            border-color: var(--accent-cyber);
-            box-shadow: 0 0 10px var(--ui-glow);
-        }
-
-        .input-status {
-            position: absolute;
-            right: 1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--accent-cyber);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .input-container.valid .input-status .fa-check-circle {
-            opacity: 1;
-        }
-
-        .input-container.invalid .input-status .fa-times-circle {
-            opacity: 1;
-            color: var(--accent-alert);
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 1rem;
-            background: transparent;
-            border: 2px solid var(--accent-cyber);
-            border-radius: var(--radius-md);
-            color: var(--accent-cyber);
-            font-family: 'Fira Code', monospace;
+        .contact-form input,
+        .contact-form textarea {
+            padding: 0.75rem;
+            border: none;
+            border-radius: var(--radius-sm);
             font-size: 1rem;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            transition: var(--transition-smooth);
+            resize: vertical;
         }
 
-        .submit-btn:hover {
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: 2px solid var(--accent-electric);
+        }
+
+        .contact-form button {
+            padding: 0.75rem;
             background: var(--accent-cyber);
             color: var(--primary-dark);
+            border: none;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            font-size: 1rem;
+            transition: var(--transition-smooth);
         }
 
-        .btn-progress {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 100%;
-            background: var(--gradient-cyber);
-            opacity: 0.3;
-            transition: width 0.3s ease;
+        .contact-form button:hover {
+            background: var(--accent-electric);
+            transform: translateY(-2px);
         }
 
-        /* Footer Styles */
-        .cyber-footer {
+        /* Footer */
+        .footer {
+            padding: var(--spacing-sm) var(--spacing-md);
             background: var(--primary-dark);
-            border-top: 1px solid rgba(0, 255, 156, 0.1);
-            padding: var(--spacing-lg) 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .footer-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-        }
-
-        .security-badge {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--accent-cyber);
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .footer-copyright {
             text-align: center;
             color: var(--text-secondary);
-            font-size: 0.9rem;
         }
 
-        .security-stats {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 1rem;
-        }
-
-        .stat {
-            color: var(--text-secondary);
-        }
-
-        .stat span {
+        .footer a {
             color: var(--accent-cyber);
+            text-decoration: none;
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .matrix-header {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .footer-info {
-                flex-direction: column;
-                gap: 1rem;
-            }
+        .footer a:hover {
+            color: var(--accent-electric);
         }
     </style>
 </head>
 <body>
-    <!-- Loading Screen -->
+    <!-- Loader -->
     <div class="loader" id="loader">
         <div class="loader-content">
             <div class="loader-circle"></div>
             <div class="loader-circle"></div>
             <div class="loader-circle"></div>
             <div class="terminal-loader">
-                <div class="terminal-header">
-                    <span class="terminal-prompt">> </span>
-                    <span class="terminal-text" id="loaderText"></span>
-                </div>
+                <div class="terminal-text">Loading...</div>
             </div>
         </div>
     </div>
 
-    <!-- Background Elements -->
-    <div class="cyber-grid" id="cyberGrid"></div>
-    <div class="neural-network-bg" id="neuralNetworkBg"></div>
+    <!-- Cyber Grid Background -->
+    <div class="cyber-grid">
+        <!-- Example grid lines, can be generated dynamically with JS -->
+        <div class="grid-line horizontal" style="top: 10%;"></div>
+        <div class="grid-line vertical" style="left: 10%;"></div>
+        <!-- Add more grid lines as desired -->
+    </div>
+
+    <!-- Neural Network Background -->
+    <div class="neural-network-bg"></div>
+
+    <!-- Particle System -->
+    <!-- Particles can be generated dynamically with JavaScript for better performance -->
 
     <!-- Navigation -->
-    <nav class="nav" id="mainNav">
+    <nav class="nav" id="navbar">
         <div class="nav-content">
-            <a href="#" class="logo">
+            <a href="#hero" class="logo">
                 <div class="logo-secure">
-                    <div class="logo-shield">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
+                    <i class="fas fa-shield-alt logo-shield"></i>
                     <div class="logo-scan"></div>
                 </div>
-                <span class="logo-text">MH.Secure</span>
+                <span class="logo-text">Muhammad Hammad</span>
             </a>
-            
-            <div class="nav-links">
-                <a href="#expertise" class="nav-link">
-                    <span class="nav-icon"><i class="fas fa-microchip"></i></span>
-                    <span>Expertise</span>
+            <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="nav-links" id="nav-links">
+                <a href="#hero" class="nav-link">
+                    <i class="fas fa-home nav-icon"></i> Home
                 </a>
-                <a href="#projects" class="nav-link">
-                    <span class="nav-icon"><i class="fas fa-shield-alt"></i></span>
-                    <span>Projects</span>
+                <a href="#about" class="nav-link">
+                    <i class="fas fa-user nav-icon"></i> About
                 </a>
-                <a href="#skills" class="nav-link">
-                    <span class="nav-icon"><i class="fas fa-code"></i></span>
-                    <span>Skills</span>
+                <a href="#services" class="nav-link">
+                    <i class="fas fa-briefcase nav-icon"></i> Services
                 </a>
                 <a href="#contact" class="nav-link">
-                    <span class="nav-icon"><i class="fas fa-lock"></i></span>
-                    <span>Contact</span>
+                    <i class="fas fa-envelope nav-icon"></i> Contact
                 </a>
+                <div class="security-status">
+                    <div class="status-indicator"></div>
+                    <div class="status-ring"></div>
+                    Secure
+                </div>
             </div>
         </div>
     </nav>
 
-    <!-- Main Content Sections -->
     <!-- Hero Section -->
     <section class="hero" id="hero">
-        <!-- Hero content will be dynamically inserted by JavaScript -->
+        <div class="hero-content">
+            <h1 class="hero-title">Welcome to My Cybersecurity Portfolio</h1>
+            <p class="hero-subtitle">Protecting Industrial Control Systems and Critical Infrastructure</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="hero-button">Get in Touch</a>
+                <a href="#services" class="hero-button">View Services</a>
+            </div>
+        </div>
     </section>
 
-    <!-- Expertise Section -->
-    <section class="expertise" id="expertise">
-        <!-- Expertise content will be dynamically inserted by JavaScript -->
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2 class="about-title">About Me</h2>
+        <p class="about-content">
+            I am Muhammad Hammad, an ICS/OT Cybersecurity Engineer with extensive experience in securing industrial control systems, SCADA protection, and defending critical infrastructure from cyber threats. My expertise lies in developing robust security strategies, conducting risk assessments, and implementing advanced security measures to ensure the integrity and availability of vital industrial systems.
+        </p>
     </section>
 
-    <!-- Projects Section -->
-    <section class="projects" id="projects">
-        <!-- Projects content will be dynamically inserted by JavaScript -->
-    </section>
-
-    <!-- Skills Matrix -->
-    <section class="skills-matrix" id="skills">
-        <!-- Skills content will be dynamically inserted by JavaScript -->
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2 class="services-title">My Services</h2>
+        <div class="services-list">
+            <div class="service-item" data-aos="fade-up">
+                <i class="fas fa-shield-alt service-icon"></i>
+                <h3 class="service-title">SCADA Security</h3>
+                <p class="service-description">
+                    Implementing robust security measures to protect SCADA systems from cyber threats, ensuring continuous and secure operations.
+                </p>
+            </div>
+            <div class="service-item" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-network-wired service-icon"></i>
+                <h3 class="service-title">Network Segmentation</h3>
+                <p class="service-description">
+                    Designing and deploying network segmentation strategies to isolate critical systems and reduce the attack surface.
+                </p>
+            </div>
+            <div class="service-item" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-exclamation-triangle service-icon"></i>
+                <h3 class="service-title">Risk Assessment</h3>
+                <p class="service-description">
+                    Conducting comprehensive risk assessments to identify vulnerabilities and recommend mitigation strategies for industrial control systems.
+                </p>
+            </div>
+            <!-- Add more service items as needed -->
+        </div>
     </section>
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
-        <!-- Contact form will be dynamically inserted by JavaScript -->
+        <h2 class="contact-title">Get in Touch</h2>
+        <form class="contact-form" action="#" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name">
+            <input type="email" name="email" placeholder="Your Email" required aria-label="Your Email">
+            <textarea name="message" rows="5" placeholder="Your Message" required aria-label="Your Message"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
     </section>
 
     <!-- Footer -->
-    <footer class="cyber-footer">
-        <!-- Footer content will be dynamically inserted by JavaScript -->
+    <footer class="footer">
+        &copy; 2023 Muhammad Hammad. All rights reserved.
+        <br>
+        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
     </footer>
 
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-// Initialize all components when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    initializeLoader();
-    initializeParticleSystem();
-    initializeTerminal();
-    initializeNetworkVisualization();
-    initializeEncryption();
-    initializeProtocolVisualizer();
-    initializeSkillMatrix();
-    initializeSecureContact();
-    initializeProjectCards();
-    initializeSecurityMonitor();
-    initializeEnhancedParticles();
-    initializeSkillBars();
-    populateDynamicContent();
-});
-
-// Loader Implementation
-const initializeLoader = () => {
-    const loader = document.getElementById('loader');
-    const loaderText = document.getElementById('loaderText');
-    const loadingSequence = [
-        'Initializing secure environment...',
-        'Establishing encrypted connection...',
-        'Verifying security protocols...',
-        'Loading defense mechanisms...',
-        'Activating ICS/OT security layers...'
-    ];
-
-    let sequenceIndex = 0;
-    const typeLoadingText = async () => {
-        const text = loadingSequence[sequenceIndex];
-        loaderText.textContent = '';
-        
-        for(let char of text) {
-            await new Promise(resolve => setTimeout(resolve, 50));
-            loaderText.textContent += char;
-        }
-        
-        sequenceIndex = (sequenceIndex + 1) % loadingSequence.length;
-    };
-
-    const loadingInterval = setInterval(typeLoadingText, 2000);
-
-    // Simulate security checks
-    setTimeout(() => {
-        clearInterval(loadingInterval);
-        loader.classList.add('loaded');
-        setTimeout(() => {
-            loader.style.display = 'none';
-            initializePostLoad();
-        }, 500);
-    }, 3000);
-};
-
-// Particle System
-const initializeParticleSystem = () => {
-    const canvas = document.createElement('canvas');
-    canvas.className = 'particle-canvas';
-    document.querySelector('.cyber-grid').appendChild(canvas);
-    const ctx = canvas.getContext('2d');
-
-    let width = canvas.width = window.innerWidth;
-    let height = canvas.height = window.innerHeight;
-
-    class Particle {
-        constructor() {
-            this.reset();
-        }
-
-        reset() {
-            this.x = Math.random() * width;
-            this.y = Math.random() * height;
-            this.vx = (Math.random() - 0.5) * 2;
-            this.vy = (Math.random() - 0.5) * 2;
-            this.radius = Math.random() * 2 + 1;
-            this.color = '#00ff9c';
-            this.life = 1;
-            this.decay = 0.005;
-        }
-
-        update() {
-            this.x += this.vx;
-            this.y += this.vy;
-            this.life -= this.decay;
-
-            if (this.x < 0 || this.x > width) this.vx *= -1;
-            if (this.y < 0 || this.y > height) this.vy *= -1;
-
-            if (this.life <= 0) this.reset();
-        }
-
-        draw() {
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(0, 255, 156, ${this.life})`;
-            ctx.fill();
-        }
-    }
-
-    const particles = Array.from({ length: 50 }, () => new Particle());
-
-    function animate() {
-        ctx.clearRect(0, 0, width, height);
-        
-        particles.forEach(particle => {
-            particle.update();
-            particle.draw();
+        // Loader functionality
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+            loader.classList.add('loaded');
         });
 
-        // Draw connections between particles
-        particles.forEach((p1, i) => {
-            particles.slice(i + 1).forEach(p2 => {
-                const dx = p1.x - p2.x;
-                const dy = p1.y - p2.y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
+        // Mobile Navigation Toggle
+        const mobileNavToggle = document.getElementById('mobile-nav-toggle');
+        const navLinks = document.getElementById('nav-links');
 
-                if (distance < 100) {
-                    ctx.beginPath();
-                    ctx.moveTo(p1.x, p1.y);
-                    ctx.lineTo(p2.x, p2.y);
-                    ctx.strokeStyle = `rgba(0, 255, 156, ${(1 - distance / 100) * 0.2})`;
-                    ctx.stroke();
-                }
-            });
+        mobileNavToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
         });
 
-        requestAnimationFrame(animate);
-    }
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
 
-    window.addEventListener('resize', () => {
-        width = canvas.width = window.innerWidth;
-        height = canvas.height = window.innerHeight;
-    });
-
-    animate();
-};
-
-// Terminal Simulator
-const initializeTerminal = () => {
-    const terminal = document.querySelector('.terminal-body');
-    const commands = [
-        {
-            cmd: 'initialize_security_protocol',
-            response: 'Security protocols activated. Monitoring for potential threats...'
-        },
-        {
-            cmd: 'scan_network',
-            response: 'Network scan complete. All systems operational.'
-        },
-        {
-            cmd: 'check_ics_status',
-            response: 'ICS systems secure. Defense-in-depth measures active.'
-        }
-    ];
-
-    let currentCommand = 0;
-
-    const typeCommand = async (text) => {
-        const commandLine = document.createElement('div');
-        commandLine.className = 'command-line';
-        commandLine.innerHTML = '<span class="prompt">root@secure:~$</span> ';
-        terminal.appendChild(commandLine);
-
-        const commandText = document.createElement('span');
-        commandLine.appendChild(commandText);
-
-        for (let char of text) {
-            await new Promise(resolve => setTimeout(resolve, 50));
-            commandText.textContent += char;
-        }
-
-        await new Promise(resolve => setTimeout(resolve, 500));
-
-        const responseElement = document.createElement('div');
-        responseElement.className = 'response';
-        responseElement.textContent = commands[currentCommand].response;
-        terminal.appendChild(responseElement);
-
-        terminal.scrollTop = terminal.scrollHeight;
-        currentCommand = (currentCommand + 1) % commands.length;
-    };
-
-    setInterval(() => {
-        typeCommand(commands[currentCommand].cmd);
-    }, 4000);
-};
-// Network Visualization with Three.js
-const initializeNetworkVisualization = () => {
-    const container = document.getElementById('networkViz');
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ 
-        antialias: true, 
-        alpha: true 
-    });
-
-    renderer.setSize(container.clientWidth, container.clientHeight);
-    container.appendChild(renderer.domElement);
-
-    // Create network nodes
-    const createNodes = () => {
-        const nodes = [];
-        const nodeCount = 20;
-        const geometry = new THREE.SphereGeometry(0.5, 32, 32);
-
-        for (let i = 0; i < nodeCount; i++) {
-            const material = new THREE.MeshPhongMaterial({
-                color: Math.random() > 0.8 ? 0xff4b4b : 0x00ff9c,
-                emissive: Math.random() > 0.8 ? 0xff4b4b : 0x00ff9c,
-                emissiveIntensity: 0.5,
-                transparent: true,
-                opacity: 0.9
-            });
-
-            const mesh = new THREE.Mesh(geometry, material);
-            mesh.position.set(
-                (Math.random() - 0.5) * 20,
-                (Math.random() - 0.5) * 20,
-                (Math.random() - 0.5) * 20
-            );
-
-            nodes.push({
-                mesh,
-                connections: [],
-                pulsePhase: Math.random() * Math.PI * 2
-            });
-
-            scene.add(mesh);
-        }
-        return nodes;
-    };
-
-    // Create connections between nodes
-    const createConnections = (nodes) => {
-        nodes.forEach((node, index) => {
-            const connectionCount = Math.floor(Math.random() * 3) + 1;
-            
-            for (let i = 0; i < connectionCount; i++) {
-                const targetIndex = Math.floor(Math.random() * nodes.length);
-                if (targetIndex !== index) {
-                    const target = nodes[targetIndex];
-                    const points = [
-                        node.mesh.position,
-                        target.mesh.position
-                    ];
-
-                    const curve = new THREE.CatmullRomCurve3(points);
-                    const geometry = new THREE.TubeGeometry(curve, 20, 0.05, 8, false);
-                    const material = new THREE.MeshPhongMaterial({
-                        color: 0x00ff9c,
-                        transparent: true,
-                        opacity: 0.3
-                    });
-
-                    const connection = new THREE.Mesh(geometry, material);
-                    scene.add(connection);
-                    node.connections.push({
-                        mesh: connection,
-                        target: target.mesh
-                    });
-                }
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
             }
         });
-    };
 
-    // Setup lighting
-    const setupLights = () => {
-        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-        const pointLight = new THREE.PointLight(0x00ff9c, 1);
-        pointLight.position.set(10, 10, 10);
-        
-        scene.add(ambientLight);
-        scene.add(pointLight);
-    };
-
-    const nodes = createNodes();
-    createConnections(nodes);
-    setupLights();
-
-    camera.position.z = 30;
-
-    // Animation loop
-    const animate = () => {
-        requestAnimationFrame(animate);
-
-        nodes.forEach(node => {
-            // Pulse effect
-            node.pulsePhase += 0.05;
-            const scale = 1 + Math.sin(node.pulsePhase) * 0.1;
-            node.mesh.scale.set(scale, scale, scale);
-
-            // Rotation
-            node.mesh.rotation.x += 0.001;
-            node.mesh.rotation.y += 0.001;
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
         });
 
-        scene.rotation.y += 0.001;
-        renderer.render(scene, camera);
-    };
+        // Initialize Typed.js for dynamic text (if needed)
+        // Example:
+        // new Typed('.hero-subtitle', {
+        //     strings: ["Protecting Industrial Control Systems...", "Securing Critical Infrastructure..."],
+        //     typeSpeed: 50,
+        //     backSpeed: 25,
+        //     loop: true
+        // });
 
-    animate();
-
-    // Handle window resize
-    window.addEventListener('resize', () => {
-        camera.aspect = container.clientWidth / container.clientHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(container.clientWidth, container.clientHeight);
-    });
-};
-
-// Security Protocol Visualizer
-const initializeSecurityProtocols = () => {
-    const container = document.querySelector('.protocol-visualizer');
-    const protocols = [
-        { name: 'Firewall', status: 'active', threats: 0 },
-        { name: 'IDS/IPS', status: 'monitoring', threats: 0 },
-        { name: 'Encryption', status: 'secured', threats: 0 },
-        { name: 'Access Control', status: 'enforced', threats: 0 }
-    ];
-
-    protocols.forEach(protocol => {
-        const element = document.createElement('div');
-        element.className = 'protocol-layer';
-        element.innerHTML = `
-            <div class="protocol-header">
-                <span class="protocol-name">${protocol.name}</span>
-                <span class="protocol-status ${protocol.status}">${protocol.status}</span>
-            </div>
-            <div class="protocol-metrics">
-                <div class="threat-counter">Threats Blocked: <span>0</span></div>
-                <div class="protection-level"></div>
-            </div>
-        `;
-        container.appendChild(element);
-
-        // Simulate threat detection
-        setInterval(() => {
-            protocol.threats += Math.floor(Math.random() * 3);
-            element.querySelector('.threat-counter span').textContent = protocol.threats;
-        }, 2000);
-    });
-};
-
-// Enhanced Skill Matrix
-const initializeSkillMatrix = () => {
-    const skills = [
-        { category: 'ICS/SCADA', level: 95, color: '#00ff9c' },
-        { category: 'Network Security', level: 90, color: '#00ff9c' },
-        { category: 'Incident Response', level: 85, color: '#41d7ff' },
-        { category: 'Threat Analysis', level: 88, color: '#41d7ff' }
-    ];
-
-    const matrix = document.querySelector('.skills-matrix');
-    
-    skills.forEach(skill => {
-        const skillElement = document.createElement('div');
-        skillElement.className = 'skill-item';
-        skillElement.innerHTML = `
-            <div class="skill-header">
-                <span class="skill-name">${skill.category}</span>
-                <span class="skill-percentage">${skill.level}%</span>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-progress" style="width: 0%"></div>
-            </div>
-        `;
-        matrix.appendChild(skillElement);
-
-        // Animate skill bars
-        gsap.to(skillElement.querySelector('.skill-progress'), {
-            width: `${skill.level}%`,
-            duration: 1.5,
-            ease: "power2.out",
-            backgroundColor: skill.color
-        });
-    });
-};
-
-// Contact Form Encryption Simulation
-const initializeSecureContact = () => {
-    const form = document.querySelector('.secure-form');
-    const encryptionVisualizer = document.querySelector('.encryption-visualization');
-
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        // Simulate encryption
-        const formData = new FormData(form);
-        for (let [key, value] of formData.entries()) {
-            await simulateEncryption(key, value);
+        // Particle System (Basic Example)
+        // You can enhance this with Three.js or other libraries for more complex particles
+        function createParticles() {
+            const particleContainer = document.querySelector('.hero');
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.width = `${Math.random() * 5 + 2}px`;
+                particle.style.height = particle.style.width;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.background = `rgba(0, 255, 156, ${Math.random() * 0.3 + 0.1})`;
+                particleContainer.appendChild(particle);
+            }
         }
 
-        // Show success message
-        showEncryptionSuccess();
-    });
-
-    const simulateEncryption = async (key, value) => {
-        const packet = document.createElement('div');
-        packet.className = 'data-packet';
-        encryptionVisualizer.appendChild(packet);
-
-        gsap.to(packet, {
-            left: '100%',
-            duration: 1,
-            ease: "power1.in",
-            onComplete: () => packet.remove()
-        });
-
-        await new Promise(resolve => setTimeout(resolve, 300));
-    };
-
-    const showEncryptionSuccess = () => {
-        const success = document.createElement('div');
-        success.className = 'encryption-success';
-        success.innerHTML = `
-            <i class="fas fa-lock"></i>
-            <span>Message Encrypted and Sent Securely</span>
-        `;
-        form.appendChild(success);
-
-        gsap.from(success, {
-            y: 20,
-            opacity: 0,
-            duration: 0.5
-        });
-
-        setTimeout(() => {
-            gsap.to(success, {
-                y: -20,
-                opacity: 0,
-                duration: 0.5,
-                onComplete: () => success.remove()
-            });
-        }, 3000);
-    };
-};
-
-// Initialize everything when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    initializeNetworkVisualization();
-    initializeSecurityProtocols();
-    initializeSkillMatrix();
-    initializeSecureContact();
-    
-    // Additional initialization
-    AOS.init({
-        duration: 1000,
-        once: true,
-        mirror: false
-    });
-});
-
-// Performance optimization
-const debounce = (func, wait) => {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-};
-
-// Handle scroll events
-window.addEventListener('scroll', debounce(() => {
-    const nav = document.querySelector('.nav');
-    if (window.scrollY > 50) {
-        nav.classList.add('scrolled');
-    } else {
-        nav.classList.remove('scrolled');
-    }
-}, 100));
-</script>
+        createParticles();
+    </script>
 </body>
 </html>
-
