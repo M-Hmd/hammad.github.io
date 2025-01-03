@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta description="ICS/OT Cybersecurity Engineer specializing in industrial control systems security, SCADA protection, and critical infrastructure defense">
+    <meta name="description" content="ICS/OT Cybersecurity Engineer specializing in industrial control systems security, SCADA protection, and critical infrastructure defense">
     <meta name="keywords" content="ICS security, OT cybersecurity, SCADA security, industrial cybersecurity, critical infrastructure protection">
     <title>Muhammad Hammad | ICS/OT Cybersecurity Engineer</title>
     
@@ -20,7 +21,8 @@
         src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" 
         integrity="sha512-..." 
         crossorigin="anonymous" 
-        referrerpolicy="no-referrer">
+        referrerpolicy="no-referrer" 
+        defer>
     </script>
     <script 
         src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js" 
@@ -31,6 +33,7 @@
         defer>
     </script>
 
+    <!-- Inline CSS -->
     <style>
         /* Advanced Core Variables */
         :root {
@@ -722,6 +725,9 @@
         .footer a:hover {
             color: var(--accent-electric);
         }
+
+        /* Additional Sections (Portfolio, Blog, etc.) */
+        /* Add your additional sections here following the same structure and styling conventions */
     </style>
 </head>
 <body>
@@ -835,6 +841,24 @@
         </div>
     </section>
 
+    <!-- Additional Sections (Portfolio, Blog, etc.) -->
+    <!-- Example Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <h2 class="portfolio-title">My Portfolio</h2>
+        <div class="portfolio-list">
+            <!-- Portfolio items with similar structure to services -->
+            <div class="portfolio-item" data-aos="fade-up">
+                <img src="path/to/project-image.jpg" alt="Project Image" class="portfolio-image">
+                <h3 class="portfolio-title">Project Title</h3>
+                <p class="portfolio-description">
+                    A brief description of the project, highlighting the cybersecurity solutions implemented.
+                </p>
+                <a href="project-link.html" class="portfolio-link">View Project</a>
+            </div>
+            <!-- Add more portfolio items as needed -->
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <h2 class="contact-title">Get in Touch</h2>
@@ -868,6 +892,15 @@
 
         mobileNavToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
+        });
+
+        // Close mobile nav when a link is clicked
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                }
+            });
         });
 
         // Navbar Scroll Effect
@@ -913,6 +946,8 @@
         }
 
         createParticles();
+
+        // Optional: Add event listeners or additional scripts here for other interactive elements
     </script>
 </body>
 </html>
